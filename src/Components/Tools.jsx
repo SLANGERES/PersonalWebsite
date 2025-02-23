@@ -1,122 +1,47 @@
-import React from 'react'
+import React from 'react';
+import cpp from '../assets/Svgs/cpp-svgrepo-com.svg';
+import docker from '../assets/Svgs/docker-svgrepo-com.svg';
+import reactnative from '../assets/Svgs/icons8-react-native.svg';
+import nodejs from '../assets/Svgs/node-js-svgrepo-com.svg';
+import postman from '../assets/Svgs/postman-icon-svgrepo-com.svg';
+import tailwind from '../assets/Svgs/tailwind-svgrepo-com.svg';
+import reactjs from '../assets/Svgs/reactjs-svgrepo-com.svg';
+import langchain from '../assets/Svgs/langchain-seeklogo.svg';
 
-import cpp from '../assets/Svgs/cpp-svgrepo-com.svg'
-
-import docker from '../assets/Svgs/docker-svgrepo-com.svg'
-
-import reactnative from '../assets/Svgs/icons8-react-native.svg'
-import nodejs from '../assets/Svgs/node-js-svgrepo-com.svg'
-import postman from '../assets/Svgs/postman-icon-svgrepo-com.svg'
-import tailwind from '../assets/Svgs/tailwind-svgrepo-com.svg'
-import reactjs from '../assets/Svgs/reactjs-svgrepo-com.svg'
-
-import langchain from '../assets/Svgs/langchain-seeklogo.svg'
-
-
+const tools = [
+  { name: 'C++', desc: 'Programming Language', icon: cpp },
+  { name: 'Docker', desc: 'Containerization Tool', icon: docker },
+  { name: 'ReactJs', desc: 'JavaScript library', icon: reactjs },
+  { name: 'React Native', desc: 'Mobile app framework', icon: reactnative },
+  { name: 'Postman', desc: 'API testing tool', icon: postman },
+  { name: 'NodeJs', desc: 'JavaScript runtime', icon: nodejs },
+  { name: 'Tailwind', desc: 'CSS utility framework', icon: tailwind },
+  { name: 'Langchain', desc: 'Framework for LLM applications', icon: langchain },
+];
 
 export const Tools = () => {
   return (
-    <div className='flex flex-col w-full min-h-[1024px]'>
-        <div className=' flex flex-col '>
-            <div className='text-8xl font-bold tracking-wide text-white'>PREMIUM</div>
-            <div className='text-8xl font-bold tracking-wide  text-emerald-800'>TOOLS</div>
-        </div>
-        <div className='h-[100px]'>
-
-        </div>
-        <div className='space-y-10 w-[70%]'>
-          <div className='flex flex-row justify-between'>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={cpp} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>C++</span>
-                    <span className='text-emerald-800'>Programming Language</span>
-                </div>
-              </div>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={docker} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>Docker</span>
-                    <span className='text-emerald-800'>Containerization Tool</span>
-                </div>
-              </div>
+    <div className="w-full min-h-screen flex flex-col justify-center items-start px-6 md:px-10 lg:px-20">
+      {/* Title Section */}
+      <div className="mb-6">
+        <h1 className="text-white font-bold text-4xl md:text-6xl lg:text-8xl">PREMIUM</h1>
+        <h1 className="text-emerald-800 font-bold text-4xl md:text-6xl lg:text-8xl">TOOLS</h1>
+      </div>
+      
+      {/* Tools Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-10 w-full max-w-5xl">
+        {tools.map((tool, index) => (
+          <div key={index} className="flex items-center space-x-6">
+            <div className="w-24 h-24 rounded-2xl bg-white flex items-center justify-center">
+              <img src={tool.icon} alt={tool.name} className="w-20 h-20" />
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-white text-xl md:text-2xl font-semibold">{tool.name}</span>
+              <span className="text-emerald-800 text-lg md:text-xl">{tool.desc}</span>
+            </div>
           </div>
-          <div className='flex flex-row justify-between'>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={reactjs} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>ReactJs</span>
-                    <span className='text-emerald-800'>JavaScript library </span>
-                </div>
-              </div>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={reactnative} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>React Native</span>
-                    <span className='text-emerald-800'>Mobile app framework</span>
-                </div>
-              </div>
-          </div>
-          <div className='flex flex-row justify-between'>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={postman} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>Postman</span>
-                    <span className='text-emerald-800'>API testing tool</span>
-                </div>
-              </div>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={nodejs} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>NodeJs</span>
-                    <span className='text-emerald-800'>JavaScript runtime</span>
-                </div>
-              </div>
-          </div>
-          <div className='flex flex-row justify-between'>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={tailwind} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    
-                    <span className='text-white'>Tailwind</span>
-                    <span className='text-emerald-800'>CSS utility framework</span>
-                </div>
-              </div>
-              <div className='flex flex-row w-[50%]'>
-                <div className='w-[100px] h-[100px] rounded-2xl bg-white '>
-                  <img src={langchain} alt="" className='w-[100px] h-[100px]'/>
-                </div>
-                <div className='h-full w-[20px]'></div>
-                <div className='flex flex-col justify-center'>
-                    <span className='text-white'>Langchain</span>
-                    <span className='text-emerald-800'>framework for LLM applications.</span>
-                </div>
-              </div>
-          </div>
-
-        </div>  
-
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};

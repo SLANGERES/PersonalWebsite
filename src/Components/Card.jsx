@@ -23,7 +23,7 @@ export const Card = () => {
   };
 
   return (
-    <div className="bg-white h-[650px] w-[400px] rounded-2xl mt-30 flex flex-col justify-center items-center hover:shadow-cyan-500/50 hover:-translate-y-1 hover:shadow-2xl hover:ease-in-out duration-300">
+    <div className="bg-white max-h-[650px] w-[400px] rounded-2xl mt-30 flex flex-col justify-center items-center hover:shadow-cyan-500/50 hover:-translate-y-1 hover:shadow-2xl hover:ease-in-out duration-300">
       {/* Profile Image */}
       <div className="w-[250px] h-[300px] bg-amber-300 rounded-3xl">
         <img src={profile} alt="Profile" className="w-full h-full object-cover rounded-lg" />

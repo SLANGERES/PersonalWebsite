@@ -29,34 +29,35 @@ export const Main = () => {
 
   return (
     <>
-      <Header scrollToSection={scrollToSection}/>
-      <div className="w-full flex">
-        <div className="w-[40%] flex justify-end">
-          <div className="sticky top-0 h-screen flex justify-center">
+      <Header scrollToSection={scrollToSection} />
+      <div className="w-full flex flex-col md:flex-row">
+        {/* Sidebar (Profile Card) */}
+        <div className="w-full md:w-[40%] flex justify-center md:justify-end">
+          <div className="sticky top-0 h-auto md:h-screen flex justify-center">
             <Card />
           </div>
         </div>
-        <div className="w-[6%]"></div>
 
-        <div className="w-[54%] min-h-screen overflow-y-auto">
-          <div ref={profileRef}>
+        {/* Main Content */}
+        <div className="w-full md:w-[60%] flex flex-col">
+          <div ref={profileRef} className="min-h-screen flex items-center justify-center">
             <Section />
           </div>
-          <div ref={projectsRef}>
+          <div ref={projectsRef} className="min-h-screen flex items-center justify-center">
             <Project />
           </div>
-          <div ref={toolsRef}>
+          <div ref={toolsRef} className="min-h-screen flex items-center justify-center">
             <Tools />
           </div>
-          <div ref={certificationsRef}>
+          <div ref={certificationsRef} className="min-h-screen flex items-center justify-center">
             <Certification />
           </div>
-          <div ref={contactRef}>
+          <div ref={contactRef} className="min-h-screen flex items-center justify-center">
             <Footer />
           </div>
-          <ScrollUp />
         </div>
       </div>
+      <ScrollUp />
     </>
   );
 };

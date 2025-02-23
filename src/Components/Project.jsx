@@ -1,13 +1,14 @@
-import React from 'react'
-import Pulsevive from '../assets/Pulsevibe.png'
-import Syncwave from '../assets/Syncwave.png'
-import Urlshortner from '../assets/Urlshortner.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import Pulsevive from '../assets/Pulsevibe.png';
+import Syncwave from '../assets/Syncwave.png';
+import Urlshortner from '../assets/Urlshortner.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 export const Project = () => {
-  const handlePulseVibe=()=>{
+  const handlePulseVibe = () => {
     window.open("https://github.com/SLANGERES/PulseVibes", "_blank");
-  }
+  };
   const handleSyncwave = () => {
     window.open("https://github.com/SLANGERES/Syncwave", "_blank");
   };
@@ -16,57 +17,38 @@ export const Project = () => {
   };
 
   return (
-    <div className='flex flex-col min-h-[1024px]'>
-      <div className=' text-white'>
-        <div className='font-bold text-8xl tracking-wide '>RECENT</div>
-        <div className='font-bold text-8xl tracking-wide text-emerald-800 '>PROJECTS</div>
+    <div className="w-full min-h-screen flex flex-col justify-center items-start px-6 md:px-10 lg:px-20">
+      {/* Heading */}
+      <div className="mb-6">
+        <h1 className="text-white font-bold text-4xl md:text-6xl lg:text-8xl">RECENT</h1>
+        <h1 className="text-emerald-800 font-bold text-4xl md:text-6xl lg:text-8xl">PROJECTS</h1>
       </div>
-      <div className='h-[50px]'>
-      </div>
-      <div className='flex flex-col space-y-3'>
-        <div className='w-[70%] h-[200px] rounded-2xl hover:translate-y-1 hover:bg-[#1B1B1B] hover:duration-500  hover:ease-in-out flex flex-row cursor-pointer'onClick={handlePulseVibe}>
-          <div className=' rounded-2xl flex justify-center items-center object-cover'>
-            <img src={Pulsevive} alt="" className=' w-[160px] h-[160px] rounded-2xl ' />
-          </div>
-          <div className='w-[30px]'></div>
-          <div className='flex justify-center flex-col flex-1'>
-            <h1 className='text-white text-3xl font-semibold'>PulseVibe</h1>
-            <span className='text-emerald-800'>Emotion based Music Recommendation Web App</span>
-          </div>
-          <div className='flex justify-end items-center'>
-            <FontAwesomeIcon icon={faArrowRight} className='rotate-320 text-3xl focus font-extralight mr-3 text-orange-400' />
-          </div>
-        </div>
-        <div className='w-[70%] h-[200px] rounded-2xl hover:translate-y-1  hover:bg-[#1B1B1B] flex flex-row hover:duration-500  shadow-lg hover:ease-in-out cursor-pointer' onClick={handleSyncwave}>
-          <div className=' rounded-2xl flex justify-center items-center object-cover'>
-            <img src={Syncwave} alt="" className=' w-[160px] h-[160px] rounded-2xl ' />
-          </div>
-          <div className='w-[30px]'></div>
-          <div className='flex justify-center flex-col flex-1'>
-            <h1 className='text-white text-3xl font-semibold'>Syncwave</h1>
-            <span className='text-emerald-800'>AI Based Communication Web App</span>
-          </div>
-          <div className='flex justify-end items-center '>
-            <FontAwesomeIcon icon={faArrowRight} className='rotate-320 text-3xl focus font-extralight mr-3 text-orange-400' />
-          </div>
-        </div>
-        <div className='w-[70%] h-[200px] rounded-2xl hover:translate-y-1  hover:bg-[#1B1B1B] flex flex-row hover:duration-500  hover:ease-in-out cursor-pointer' onClick={handleUrlShort}>
-          <div className=' rounded-2xl flex justify-center items-center object-cover'>
-            <img src={Urlshortner} alt="" className=' w-[160px] h-[160px] rounded-2xl ' />
-          </div>
-          <div className='w-[30px]'></div>
-          <div className='flex justify-center flex-col flex-1'>
-            <h1 className='text-white text-3xl font-semibold'>Short URL</h1>
-            <span className='text-emerald-800'>Emotion based Music Recommendation Web APP</span>
-          </div>
 
-          <div className='flex justify-end items-center'>
-            <FontAwesomeIcon icon={faArrowRight} className=' rotate-320 text-3xl focus font-extralight mr-3 text-orange-400' />
+      {/* Projects List */}
+      <div className="flex flex-col space-y-6 w-full max-w-2xl">
+      {[
+        { img: Pulsevive, title: "PulseVibe", desc: "Emotion-based Music Recommendation Web App", onClick: handlePulseVibe },
+        { img: Syncwave, title: "Syncwave", desc: "AI-Based Communication Web App", onClick: handleSyncwave },
+        { img: Urlshortner, title: "Short URL", desc: "URL Shortener Web App", onClick: handleUrlShort }
+      ].map((project, index) => (
+        <div 
+          key={index} 
+          className="group flex flex-col md:flex-row items-center w-full rounded-2xl p-4 md:p-6 
+                     hover:bg-[#1B1B1B] transition duration-500 cursor-pointer"
+          onClick={project.onClick}
+        >
+          <img src={project.img} alt={project.title} className="w-24 h-24 md:w-40 md:h-40 rounded-2xl object-cover" />
+          <div className="md:ml-6 mt-4 md:mt-0 flex-1 text-left">
+            <h1 className="text-white text-2xl md:text-3xl font-semibold">{project.title}</h1>
+            <span className="text-emerald-800 text-sm md:text-base block mt-1">{project.desc}</span>
+          </div>
+          <div className="hidden md:flex justify-end items-center">
+            <FontAwesomeIcon icon={faArrowRight} className="text-3xl text-orange-400 transition-transform duration-300 group-hover:translate-x-2 rotate-[330deg]" />
           </div>
         </div>
-
-      </div>
-  
+      ))}
     </div>
-  )
-}
+
+    </div>
+  );
+};

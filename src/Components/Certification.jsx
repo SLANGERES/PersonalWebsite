@@ -1,76 +1,75 @@
-import React from 'react'
-import hackerrank from '../assets/Expassets/hackerrank-4.svg'
+import React from 'react';
+import hackerrank from '../assets/Expassets/hackerrank-4.svg';
 import walmart from '../assets/Expassets/walmart.svg';
-import eagames from '../assets/Expassets/ea-games.svg'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-
-
+import eagames from '../assets/Expassets/ea-games.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export const Certification = () => {
-    const handleEA = () => {
-        window.open("https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_H4gvBDSeYRDRrojNy_1738950692372_completion_certificate.pdf", "_blank");
-      };
-      const handleWalmart = () => {
-        window.open("https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/prBZoAihniNijyD6d/oX6f9BbCL9kJDJzfg_prBZoAihniNijyD6d_H4gvBDSeYRDRrojNy_1738958755421_completion_certificate.pdf", "_blank");
-      };
-      const handleHackerRank = () => {
-        window.open("https://www.hackerrank.com/certificates/ab8bd43f0e7d", "_blank");
-      };
+  const handleEA = () => {
+    window.open("https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_H4gvBDSeYRDRrojNy_1738950692372_completion_certificate.pdf", "_blank");
+  };
+  const handleWalmart = () => {
+    window.open("https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/prBZoAihniNijyD6d/oX6f9BbCL9kJDJzfg_prBZoAihniNijyD6d_H4gvBDSeYRDRrojNy_1738958755421_completion_certificate.pdf", "_blank");
+  };
+  const handleHackerRank = () => {
+    window.open("https://www.hackerrank.com/certificates/ab8bd43f0e7d", "_blank");
+  };
+
+  const certifications = [
+    {
+      img: walmart,
+      title: 'Walmart',
+      subtitle: 'Advanced Software Engineering Certification',
+      onClick: handleWalmart,
+    },
+    {
+      img: eagames,
+      title: 'Electronic Arts',
+      subtitle: 'Software Engineering Certification',
+      onClick: handleEA,
+    },
+    {
+      img: hackerrank,
+      title: 'HackerRank',
+      subtitle: 'Problem Solving & 5-Star in C++',
+      onClick: handleHackerRank,
+    },
+  ];
 
   return (
-    <div className='flex flex-col min-h-[1024px]'>
-      <div className=' text-white'>
-        <div className='font-bold text-8xl tracking-wide '>Experience &</div>
-        <div className='font-bold text-8xl tracking-wide text-emerald-800'>Certification</div>
+    <div className="w-full min-h-screen flex flex-col justify-center items-start px-6 md:px-10 lg:px-20">
+      {/* Title Section */}
+      <div className="mb-6">
+        <h1 className="text-white font-bold text-4xl md:text-6xl lg:text-8xl">Experience &</h1>
+        <h1 className="text-emerald-800 font-bold text-4xl md:text-6xl lg:text-8xl">Certification</h1>
       </div>
-      <div className='h-[50px]'>
-      </div>
-      <div className='flex flex-col space-y-3'>
-        <div className='w-[70%] h-[200px] rounded-2xl hover:translate-y-1 hover:bg-[#1B1B1B] hover:duration-500 hover:ease-in-out flex flex-row cursor-pointer ' onClick={handleWalmart}>
-          <div className=' rounded-2xl flex justify-center items-center object-cover'>
-            <img src={walmart} alt="" className=' w-[160px] h-[160px] rounded-2xl ' />
-          </div>
-          <div className='w-[30px]'></div>
-          <div className='flex justify-center flex-col flex-1'>
-            <h1 className='text-white text-3xl font-semibold'>Walmart</h1>
-            <span className='text-emerald-800'>Advance Software Engineering Certification</span>
-          </div>
-          <div className='flex justify-end items-center'>
-            <FontAwesomeIcon icon={faArrowRight} className='rotate-320 text-3xl focus font-extralight mr-3 text-orange-400' />
-          </div>
-        </div>
-        <div className='w-[70%] h-[200px] rounded-2xl hover:translate-y-1 hover:bg-[#1B1B1B] hover:duration-500 hover:ease-in-out flex flex-row cursor-pointer ' onClick={handleEA}>
-          <div className=' rounded-2xl flex justify-center items-center object-cover'>
-            <img src={eagames} alt="" className=' w-[160px] h-[160px] rounded-2xl ' />
-          </div>
-          <div className='w-[30px]'></div>
-          <div className='flex justify-center flex-col flex-1'>
-            <h1 className='text-white text-3xl font-semibold'>Electronic Arts</h1>
-            <span className='text-emerald-800'>Software Engineering Certification</span>
-          </div>
 
-          <div className='flex justify-end items-center'>
-            <FontAwesomeIcon icon={faArrowRight} className='rotate-320 text-3xl focus font-extralight mr-3 text-orange-400' />
-          </div>
-        </div>
-        <div className='w-[70%] h-[200px] rounded-2xl hover:translate-y-1 hover:bg-[#1B1B1B] hover:duration-500 hover:ease-in-out flex flex-row cursor-pointer' onClick={handleHackerRank}>
-          <div className=' rounded-2xl flex justify-center items-center object-cover'>
-            <img src={hackerrank} alt="" className=' w-[160px] h-[160px] rounded-2xl bg-white ' />
-          </div>
-          <div className='w-[30px]'></div>
-          <div className='flex justify-center flex-col flex-1'>
-            <h1 className='text-white text-3xl font-semibold'>HackerRank</h1>
-            <span className='text-emerald-800'>Problem Solving & 5 star in C++</span>
-          </div>
-          {/* <div className='w-[160px]'></div> */}
-          <div className='flex justify-end items-center '>
-            <FontAwesomeIcon icon={faArrowRight} className='text-orange-400 rotate-320 text-3xl focus font-extralight mr-3'/>
-          </div>
-        </div>
-
+      {/* Certification Cards */}
+      <div className="flex flex-col space-y-6 w-full max-w-2xl">
+  {certifications.map((cert, index) => (
+    <div
+      key={index}
+      className="group w-full h-[180px] md:h-[200px] flex items-center p-4 rounded-2xl cursor-pointer  hover:bg-[#1B1B1B] transition duration-300"
+      onClick={cert.onClick}
+    >
+      <img
+        src={cert.img}
+        alt={cert.title}
+        className="w-[100px] md:w-[160px] h-[100px] md:h-[160px] rounded-2xl object-contain bg-white"
+      />
+      <div className="flex-1 text-left ml-6">
+        <h1 className="text-white text-2xl md:text-3xl font-semibold">{cert.title}</h1>
+        <span className="text-emerald-800 block mt-1">{cert.subtitle}</span>
       </div>
-  
+      <FontAwesomeIcon 
+        icon={faArrowRight} 
+        className="text-orange-400 text-3xl ml-3 transition-transform duration-300 group-hover:translate-x-2 rotate-[330deg]" 
+      />
     </div>
-  )
-}
+  ))}
+</div>
+
+    </div>
+  );
+};
