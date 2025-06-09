@@ -5,7 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export const Section = () => {
   const handleResume = () => {
-    window.open("https://drive.google.com/file/d/1Zy3-wGcd2kXJYKxHeaPc8WV9hjquMgpF/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/1OR5EDeF2DwoDDJ7wN5Dv6x9XbEmeMkSj/view?usp=drive_link", "_blank");
   };
 
   return (
